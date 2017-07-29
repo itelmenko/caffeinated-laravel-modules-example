@@ -11,8 +11,7 @@
 |
 */
 
-Route::group(['prefix' => 'blog'], function () {
-    Route::get('/', function () {
-        dd('This is the Blog module index page. Build something great!');
-    });
+Route::group(['middleware' => 'web', 'prefix' => 'blog'], function()
+{
+    Route::get('/', 'BlogController@index');
 });
